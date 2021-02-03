@@ -1,5 +1,6 @@
 class Main{
     public static void main(String[] args){
-        System.out.print("Alive!");
+        Pawn pawn = new Pawn();
+        System.out.print(pawn);
     }
 }
