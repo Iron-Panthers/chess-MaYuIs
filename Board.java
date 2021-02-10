@@ -19,14 +19,20 @@ public class Board {
         data[getI(x, y)] = piece;
     }
 
-    public String toString(){
+    public String toString() {
         StringBuilder ret = new StringBuilder();
-        for(int y = 0; y < HEIGHT; y++){
-            for(int x = 0; x < WIDTH; x++){
+        for (int y = 0, cord = HEIGHT; y < HEIGHT; y++, cord--) {
+            ret.append(cord + " ");
+            for (int x = 0; x < WIDTH; x++) {
                 ret.append((this.get(x, y) != null ? this.get(x, y).toString() : ".") + " ");
             }
             ret.append("\n");
         }
+        ret.append("  ");
+        for (int ch = 97; ch < 97 + WIDTH; ch++) {
+            ret.append((char) ch + " ");
+        }
+        ret.append("  \n");
         return ret.toString();
     }
 }
