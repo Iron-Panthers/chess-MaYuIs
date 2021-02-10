@@ -18,4 +18,15 @@ public class Board {
     public void set(int x, int y, Piece piece) {
         data[getI(x, y)] = piece;
     }
+
+    public String toString(){
+        StringBuilder ret = new StringBuilder();
+        for(int x = 0; x < WIDTH; x++){
+            for(int y = 0; y < HEIGHT; y++){
+                ret.append((this.get(x, y) != null ? this.get(x, y).toString() : ".") + " ");
+            }
+            ret.append("\n");
+        }
+        return ret.toString();
+    }
 }
