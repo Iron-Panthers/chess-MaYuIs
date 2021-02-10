@@ -21,8 +21,8 @@ public class Board {
 
     public String toString(){
         StringBuilder ret = new StringBuilder();
-        for(int x = 0; x < WIDTH; x++){
-            for(int y = 0; y < HEIGHT; y++){
+        for(int y = 0; y < HEIGHT; y++){
+            for(int x = 0; x < WIDTH; x++){
                 ret.append((this.get(x, y) != null ? this.get(x, y).toString() : ".") + " ");
             }
             ret.append("\n");
