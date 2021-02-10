@@ -1,7 +1,7 @@
 public class Board {
     private Piece[] data;
-    public static final int WIDTH = 12;
-    public static final int HEIGHT = 12;
+    public static final int WIDTH = 8;
+    public static final int HEIGHT = 8;
 
     public Board() {
         data = new Piece[WIDTH * HEIGHT];
