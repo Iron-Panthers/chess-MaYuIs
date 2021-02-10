@@ -1,3 +1,11 @@
 public class Piece {
-    public String name = "piece";
+    private String color; 
+    private String name; 
+    private int x = 0;
+    private int y = 0;
+    public String toString(){
+        String nameReturn = name.substring(0,1);
+        return nameReturn.toUpperCase() ; 
+    }
+
 }

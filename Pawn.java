@@ -1,3 +1,3 @@
 public class Pawn extends Piece {
-    public String otherName = "pawn";
+    private boolean hasMoved;
 }
