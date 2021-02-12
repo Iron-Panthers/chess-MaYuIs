@@ -1,8 +1,11 @@
 public class Piece {
     private String color;
     private String name = "???";
-    private int x = 0;
-    private int y = 0;
+    private Cord cord;
+    private boolean hasMoved;
+    private Cord[] moves;
+    private Cord[] takes;
+    private boolean ray;
 
 
     public String getName() {
