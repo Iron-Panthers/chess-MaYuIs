@@ -20,16 +20,18 @@ public class Board {
     }
 
     public String toString() {
-        StringBuilder ret = new StringBuilder();
-        for (int y = 0, cord = HEIGHT; y < HEIGHT; y++, cord--) {
-            ret.append(cord + " ");
+        StringBuilder ret = new StringBuilder();// String builder is just adds to the end of  string
+        for (int y = 0, cord = HEIGHT; y < HEIGHT; y++, cord--) {// height =  8, cord = height, cord = 8 
+            ret.append(cord + " ");// appened =  add on to the end 
             for (int x = 0; x < WIDTH; x++) {
                 ret.append((this.get(x, y) != null ? this.get(x, y).toString() : ".") + " ");
+                /* null = nothing there 
+                ? if statment in one line*/ 
             }
-            ret.append("\n");
+            ret.append("\n");// making new line  = \n
         }
-        ret.append("  ");
-        for (int ch = 97; ch < 97 + WIDTH; ch++) {
+        ret.append("  ");// nothing to draw between 1 and a 
+        for (int ch = 97; ch < 97 + WIDTH; ch++) { 
             ret.append((char) ch + " ");
         }
         ret.append("  \n");
