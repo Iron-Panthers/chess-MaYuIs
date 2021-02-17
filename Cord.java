@@ -17,6 +17,14 @@ public class Cord {
                 return new Cord(1, 0);
             case "left":
                 return new Cord(-1, 0);
+            case "up+right":
+                return new Cord(1, -1);
+            case "up+left":
+                return new Cord(-1, -1);
+            case "down+right":
+                return new Cord(1, 1);
+            case "down+left":
+                return new Cord(-1, 1);
             default:
                 System.out.print("bad thing has happened");
                 return new Cord(0, 0);
