@@ -20,8 +20,11 @@ public class Board {
     }
 
     public String toString() {
-        StringBuilder ret = new StringBuilder();// String builder is just adds to the end of  string
-        for (int y = 0, cord = HEIGHT; y < HEIGHT; y++, cord--) {// height =  8, cord = height, cord = 8 
+        StringBuilder ret = new StringBuilder();/* String builder is just adds to the end of  string*/
+        for (int y = 0, cord = HEIGHT; y < HEIGHT; y++, cord--) {
+            /* height =  8
+             cord = height
+              cord = 8 */
             ret.append(cord + " ");// appened =  add on to the end 
             for (int x = 0; x < WIDTH; x++) {
                 ret.append((this.get(x, y) != null ? this.get(x, y).toString() : ".") + " ");
@@ -31,7 +34,7 @@ public class Board {
             ret.append("\n");// making new line  = \n
         }
         ret.append("  ");// nothing to draw between 1 and a 
-        for (int ch = 97; ch < 97 + WIDTH; ch++) { 
+        for (int ch = 97; ch < 97 + WIDTH; ch++) { // 97 = beginning of the lower case alphabet 
             ret.append((char) ch + " ");
         }
         ret.append("  \n");
