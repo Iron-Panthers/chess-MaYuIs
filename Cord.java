@@ -7,6 +7,22 @@ public class Cord {
         this.y = y;
     }
 
+    public static Cord easy(String direction) {
+        switch (direction) {
+            case "up":
+                return new Cord(0, -1);
+            case "down":
+                return new Cord(0, 1);
+            case "right":
+                return new Cord(1, 0);
+            case "left":
+                return new Cord(-1, 0);
+            default:
+                System.out.print("bad thing has happened");
+                return new Cord(0, 0);
+        }
+    }
+
     public int getX() {
         return x;
     }
