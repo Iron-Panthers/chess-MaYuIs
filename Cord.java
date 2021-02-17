@@ -8,6 +8,7 @@ public class Cord {
     }
 
     public static Cord easy(String direction) {
+        //this code is an affront to god 
         switch (direction) {
             case "up":
                 return new Cord(0, -1);
