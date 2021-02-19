@@ -20,21 +20,21 @@ public class Board {
     }
 
     public String toString() {
-        StringBuilder ret = new StringBuilder();/* String builder is just adds to the end of  string*/
+        StringBuilder ret = new StringBuilder();/* String builder is just adds to the end of string */
         for (int y = 0, cord = HEIGHT; y < HEIGHT; y++, cord--) {
-            /* height =  8
-             cord = height
-              cord = 8 */
-            ret.append(cord + " ");// appened =  add on to the end 
+            ret.append(cord + " ");// appened = add on to the end
             for (int x = 0; x < WIDTH; x++) {
-                ret.append((this.get(x, y) != null ? this.get(x, y).toString() : ".") + " ");
-                /* null = nothing there 
-                ? if statment in one line*/ 
+                ret.append((((x + y) % 2 == 0) ? CC.BLACK_BACKGROUND : CC.WHITE_BACKGROUND)
+                        + CC.RED_BOLD_BRIGHT + (this.get(x, y) != null ? this.get(x, y).toString() : " ") + " "
+                        + CC.RESET);
+                /*
+                 * null = nothing there ? if statment in one line
+                 */
             }
-            ret.append("\n");// making new line  = \n
+            ret.append("\n");// making new line = \n
         }
-        ret.append("  ");// nothing to draw between 1 and a 
-        for (int ch = 97; ch < 97 + WIDTH; ch++) { // 97 = beginning of the lower case alphabet 
+        ret.append("  ");// nothing to draw between 1 and a
+        for (int ch = 97; ch < 97 + WIDTH; ch++) { // 97 = beginning of the lower case alphabet
             ret.append((char) ch + " ");
         }
         ret.append("  \n");
