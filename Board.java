@@ -3,8 +3,19 @@ public class Board {
     public static final int WIDTH = 8;
     public static final int HEIGHT = 8;
 
+    private static final StringBuilder blankEven = new StringBuilder();
+    private static final StringBuilder blankOdd = new StringBuilder();
+
     public Board() {
         data = new Piece[WIDTH * HEIGHT];
+        for (int x = 0; x < WIDTH; x++) {
+            blankEven.append(x % 2 == 0 ? CC.BLACK_BACKGROUND : CC.WHITE_BACKGROUND);
+            blankEven.append("      ");
+            blankEven.append(CC.RESET);
+            blankOdd.append(x % 2 != 0 ? CC.BLACK_BACKGROUND : CC.WHITE_BACKGROUND);
+            blankOdd.append("      ");
+            blankOdd.append(CC.RESET);
+        }
     }
 
     private int getI(int x, int y) {
@@ -23,11 +34,7 @@ public class Board {
         StringBuilder ret = new StringBuilder();/* String builder is just adds to the end of string */
         for (int y = 0, cord = HEIGHT; y < HEIGHT; y++, cord--) {
             ret.append("  ");
-            for (int x = 0; x < WIDTH; x++) {
-                ret.append((x + y) % 2 == 0 ? CC.BLACK_BACKGROUND : CC.WHITE_BACKGROUND);
-                ret.append("      ");
-                ret.append(CC.RESET);
-            }
+            ret.append(y%2==0 ? blankEven : blankOdd);
             ret.append("\n");
             ret.append(cord);// appened = add on to the end
             ret.append(" ");
@@ -43,11 +50,7 @@ public class Board {
                  */
             }
             ret.append("\n  ");// making new line = \n
-            for (int x = 0; x < WIDTH; x++) {
-                ret.append((x + y) % 2 == 0 ? CC.BLACK_BACKGROUND : CC.WHITE_BACKGROUND);
-                ret.append("      ");
-                ret.append(CC.RESET);
-            }
+            ret.append(y%2==0 ? blankEven : blankOdd);
             ret.append("\n");
         }
         ret.append("  ");// nothing to draw between 1 and a
