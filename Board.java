@@ -24,9 +24,11 @@ public class Board {
         for (int y = 0, cord = HEIGHT; y < HEIGHT; y++, cord--) {
             ret.append(cord + " ");// appened = add on to the end
             for (int x = 0; x < WIDTH; x++) {
-                ret.append((((x + y) % 2 == 0) ? CC.BLACK_BACKGROUND : CC.WHITE_BACKGROUND)
-                        + CC.RED_BOLD_BRIGHT + (this.get(x, y) != null ? this.get(x, y).toString() : " ") + " "
-                        + CC.RESET);
+                ret.append((x + y) % 2 == 0 ? CC.BLACK_BACKGROUND : CC.WHITE_BACKGROUND);
+                ret.append(CC.RED_BOLD_BRIGHT);
+                ret.append(this.get(x, y) != null ? this.get(x, y).toString() : " ");
+                ret.append(" ");
+                ret.append(CC.RESET);
                 /*
                  * null = nothing there ? if statment in one line
                  */
