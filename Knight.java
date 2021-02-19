@@ -11,5 +11,6 @@ public class Knight extends Piece{// + left + - 3ight
         new Cord(1,-3)// up 3  right 1
         // all of the moves 
     };// all moves within 
+    private Cord[] takes = moves;
     private boolean ray = false;
 }
