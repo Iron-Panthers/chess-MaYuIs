@@ -1,15 +1,15 @@
 public class Queen extends Piece {
     private String name = "queen";
     private Cord[] moves = {
-        new Cord(0,-1),
-        new Cord(1,-1),
-        new Cord(1,0),
-        new Cord(1,1),
-        //negative is right, positive is left
-        //finish the cords
+        new Cord("up"),
+        new Cord("down"),
+        new Cord("right"),
+        new Cord("left"),
+        new Cord("up+right"),
+        new Cord("up+left"),
+        new Cord("down+left"),
+        new Cord("down+right")// taking this data from the Cord class 
     };
-    private Cord[] takes = moves;
+    private Cord[] takes = moves; // doesn't have new moves to take pieces  
     private boolean ray = true;
-
 }
-
