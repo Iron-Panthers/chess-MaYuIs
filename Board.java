@@ -3,8 +3,19 @@ public class Board {
     public static final int WIDTH = 8;
     public static final int HEIGHT = 8;
 
+    private static final StringBuilder blankEven = new StringBuilder();
+    private static final StringBuilder blankOdd = new StringBuilder();
+
     public Board() {
         data = new Piece[WIDTH * HEIGHT];
+        for (int x = 0; x < WIDTH; x++) {
+            blankEven.append(x % 2 == 0 ? CC.BLACK_BACKGROUND : CC.WHITE_BACKGROUND);
+            blankEven.append("      ");
+            blankEven.append(CC.RESET);
+            blankOdd.append(x % 2 != 0 ? CC.BLACK_BACKGROUND : CC.WHITE_BACKGROUND);
+            blankOdd.append("      ");
+            blankOdd.append(CC.RESET);
+        }
     }
 
     private int getI(int x, int y) {
@@ -20,22 +31,33 @@ public class Board {
     }
 
     public String toString() {
-        StringBuilder ret = new StringBuilder();/* String builder is just adds to the end of  string*/
+        StringBuilder ret = new StringBuilder();/* String builder is just adds to the end of string */
         for (int y = 0, cord = HEIGHT; y < HEIGHT; y++, cord--) {
-            /* height =  8
-             cord = height
-              cord = 8 */
-            ret.append(cord + " ");// appened =  add on to the end 
+            ret.append("  ");
+            ret.append(y%2==0 ? blankEven : blankOdd);
+            ret.append("\n");
+            ret.append(cord);// appened = add on to the end
+            ret.append(" ");
             for (int x = 0; x < WIDTH; x++) {
-                ret.append((this.get(x, y) != null ? this.get(x, y).toString() : ".") + " ");
-                /* null = nothing there 
-                ? if statment in one line*/ 
+                ret.append((x + y) % 2 == 0 ? CC.BLACK_BACKGROUND : CC.WHITE_BACKGROUND);
+                ret.append("  ");
+                ret.append(CC.RED_BOLD_BRIGHT);
+                ret.append(this.get(x, y) != null ? this.get(x, y).toString() : " ");
+                ret.append("   ");
+                ret.append(CC.RESET);
+                /*
+                 * null = nothing there ? if statment in one line
+                 */
             }
-            ret.append("\n");// making new line  = \n
+            ret.append("\n  ");// making new line = \n
+            ret.append(y%2==0 ? blankEven : blankOdd);
+            ret.append("\n");
         }
-        ret.append("  ");// nothing to draw between 1 and a 
-        for (int ch = 97; ch < 97 + WIDTH; ch++) { // 97 = beginning of the lower case alphabet 
-            ret.append((char) ch + " ");
+        ret.append("  ");// nothing to draw between 1 and a
+        for (int ch = 97; ch < 97 + WIDTH; ch++) { // 97 = beginning of the lower case alphabet
+            ret.append("  ");
+            ret.append((char) ch);
+            ret.append("   ");
         }
         ret.append("  \n");
         return ret.toString();
