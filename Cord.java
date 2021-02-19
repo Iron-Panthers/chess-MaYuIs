@@ -7,28 +7,45 @@ public class Cord {
         this.y = y;
     }
 
-    public static Cord easy(String direction) {
+    public Cord(String direction) {
         //this code is an affront to god 
         switch (direction) {
             case "up":
-                return new Cord(0, -1);
+                this.x = 0;
+                this.y = -1;
+                break;
             case "down":
-                return new Cord(0, 1);
+                this.x = 0;
+                this.y = 1;
+                break;
             case "right":
-                return new Cord(1, 0);
+                this.x = 1;
+                this.y = 0;
+                break;
             case "left":
-                return new Cord(-1, 0);
+                this.x = -1;
+                this.y = 0;
+                break;
             case "up+right":
-                return new Cord(1, -1);
+                this.x = 1;
+                this.y = -1;
+                break;
             case "up+left":
-                return new Cord(-1, -1);
+                this.x = -1;
+                this.y = -1;
+                break;
             case "down+right":
-                return new Cord(1, 1);
+                this.x = 1;
+                this.y = 1;
+                break;
             case "down+left":
-                return new Cord(-1, 1);
+                this.x = -1;
+                this.y = 1;
+                break;
             default:
                 System.out.print("bad thing has happened");
-                return new Cord(0, 0);
+                this.x = 0;
+                this.y = 0;
         }
     }
 
