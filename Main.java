@@ -6,6 +6,8 @@ class Main {
         board.set(1, 1, new Pawn());
         board.set(5, 0, new Pawn());
 
+        Cord test = Cord.easy("up");
+
         System.out.print(board);
     }
 }
