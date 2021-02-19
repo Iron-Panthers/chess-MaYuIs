@@ -1,5 +1,4 @@
-public class Color {
-    enum BlackandWhite{
-        Black,White;
-    }
+public enum Color {
+    BLACK,
+    WHITE
 }
