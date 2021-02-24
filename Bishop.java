@@ -1,16 +1,21 @@
 public class Bishop extends Piece {
     public Bishop(Color color){
-        super(color);
+        super(color, "bishop", "♝", 
+        new Cord[]{
+            new Cord("up+right"),
+            new Cord("down+right"),
+            new Cord("down+left"),
+            new Cord("up+left"),
+    
+        },
+        new Cord[]{
+            new Cord("up+right"),
+            new Cord("down+right"),
+            new Cord("down+left"),
+            new Cord("up+left"),
+    
+        }, 
+        true
+        );
     }
-    private String name = "bishop";
-    private String icon = "♝";
-    private Cord[] moves = {
-        new Cord("up+right"),
-        new Cord("down+right"),
-        new Cord("down+left"),
-        new Cord("up+left"),
-
-    };
-    private Cord[] takes = moves;
-    private boolean ray = true;
 }
