@@ -44,7 +44,8 @@ public class Board {
                     ret.append("  ");
                     ret.append(this.get(x, y).getColor() == Color.BLACK ? CC.RED_BOLD_BRIGHT : CC.GREEN_BOLD_BRIGHT);
                     ret.append(this.get(x, y).toString());
-                    ret.append("   ");
+                    ret.append(this.get(x, y).getIcon());
+                    ret.append("  ");
                 } else {
                     ret.append("      ");
                 }
