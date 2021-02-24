@@ -1,12 +1,13 @@
 class Main {
     public static void main(String[] args) {
         Board board = new Board();
+        for (int i = 0; i<8; i++){
+            board.set(i,1,new Pawn(Color.WHITE));
+        }
+        for (int i = 0; i<8; i++){
+            board.set(i,6, new Pawn(Color.BLACK));
+        }
 
-        board.set(1, 0, new Pawn(Color.BLACK));
-        board.set(1, 1, new Pawn(Color.WHITE));
-        board.set(5, 0, new Pawn(Color.BLACK));
-
-        Cord test = new Cord("up");
 
         System.out.print(board);
     }
