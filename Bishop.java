@@ -3,6 +3,7 @@ public class Bishop extends Piece {
         super(color);
     }
     private String name = "bishop";
+    private String icon = "♝";
     private Cord[] moves = {
         new Cord("up+right"),
         new Cord("down+right"),

@@ -1,6 +1,7 @@
 public class Piece {
     private Color color;
     private String name = "???";
+    private String icon = "!";
     private Cord cord;
     private boolean hasMoved;
     // moves and takes are relitive to white
@@ -17,6 +18,10 @@ public class Piece {
 
     public String getName() {
         return name;
+    }
+
+    public String getIcon() {
+        return icon;
     }
 
     public Color getColor() {
