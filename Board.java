@@ -42,7 +42,7 @@ public class Board {
                 ret.append((x + y) % 2 == 0 ? CC.BLACK_BACKGROUND : CC.WHITE_BACKGROUND);
                 if(this.get(x, y) != null){
                     ret.append("  ");
-                    ret.append(this.get(x, y).getColor() == Color.BLACK ? CC.RED_BOLD_BRIGHT : CC.GREEN_BOLD_BRIGHT);
+                    ret.append(this.get(x, y).getColor() == Color.BLACK ? CC.RED_BOLD_BRIGHT : CC.PURPLE_BOLD_BRIGHT);
                     ret.append(this.get(x, y).toString());
                     ret.append(this.get(x, y).getIcon());
                     ret.append("  ");
