@@ -3,6 +3,7 @@ public class King extends Piece {
         super(color);
     }
     private String name = "king";
+    private String icon = "♚";
     private Cord[] moves = {
         new Cord("up"),
         new Cord("down"),
