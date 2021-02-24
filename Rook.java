@@ -1,4 +1,7 @@
 public class Rook extends Piece {
+    public Rook(Color color){
+        super(color);
+    }
     private String name = "rook";
     private Cord[] moves = {
         new Cord("up"),

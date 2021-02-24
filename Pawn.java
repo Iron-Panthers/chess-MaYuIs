@@ -1,4 +1,7 @@
 public class Pawn extends Piece {
+    public Pawn(Color color){
+        super(color);
+    }
     private String name = "pawn"; 
     private Cord[] moves = {
         new Cord(0,-1),// up 1

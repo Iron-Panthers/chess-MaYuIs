@@ -1,4 +1,7 @@
 public class Knight extends Piece{// + left + - 3ight 
+    public Knight(Color color){
+        super(color);
+    }
     private String name = "knight"; 
     private Cord[] moves = {
         new Cord(3,-1),// up 1 left 3

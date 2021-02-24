@@ -1,4 +1,7 @@
 public class King extends Piece {
+    public King(Color color){
+        super(color);
+    }
     private String name = "king";
     private Cord[] moves = {
         new Cord("up"),

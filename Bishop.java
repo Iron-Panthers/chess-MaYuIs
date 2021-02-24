@@ -1,4 +1,7 @@
 public class Bishop extends Piece {
+    public Bishop(Color color){
+        super(color);
+    }
     private String name = "bishop";
     private Cord[] moves = {
         new Cord("up+right"),

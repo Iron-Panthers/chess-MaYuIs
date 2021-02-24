@@ -1,5 +1,5 @@
 public class Piece {
-    private String color;
+    private Color color;
     private String name = "???";
     private Cord cord;
     private boolean hasMoved;
@@ -11,11 +11,15 @@ public class Piece {
     private Cord[] takes;
     private boolean ray;
 
+    public Piece(Color color){
+        this.color = color;
+    }
+
     public String getName() {
         return name;
     }
 
-    public String getColor() {
+    public Color getColor() {
         return color;
     }
 
