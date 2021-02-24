@@ -40,10 +40,15 @@ public class Board {
             ret.append(" ");
             for (int x = 0; x < WIDTH; x++) {
                 ret.append((x + y) % 2 == 0 ? CC.BLACK_BACKGROUND : CC.WHITE_BACKGROUND);
-                ret.append("  ");
-                ret.append(CC.RED_BOLD_BRIGHT);
-                ret.append(this.get(x, y) != null ? this.get(x, y).toString() : " ");
-                ret.append("   ");
+                if(this.get(x, y) != null){
+                    ret.append("  ");
+                    ret.append(this.get(x, y).getColor() == Color.BLACK ? CC.RED_BOLD_BRIGHT : CC.GREEN_BOLD_BRIGHT);
+                    ret.append(this.get(x, y).toString());
+                    ret.append("   ");
+                } else {
+                    ret.append("      ");
+                }
+                
                 ret.append(CC.RESET);
                 /*
                  * null = nothing there ? if statment in one line
