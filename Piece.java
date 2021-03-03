@@ -1,3 +1,5 @@
+import java.util.*; //fight me
+
 public class Piece {
     private Color color;
     private String name;
@@ -12,7 +14,7 @@ public class Piece {
     private Cord[] takes;
     private boolean ray;
 
-    public Piece(Color color, String name, String icon, Cord[] moves, Cord[] takes, boolean ray){
+    public Piece(Color color, String name, String icon, Cord[] moves, Cord[] takes, boolean ray) {
         this.color = color;
         this.name = name;
         this.icon = icon;
@@ -35,6 +37,23 @@ public class Piece {
 
     public String toString() {
         return name.substring(0, 1).toUpperCase();
+    }
+
+    public Cord[] allMovesRelCords() {
+        if (!this.ray) {
+            return this.moves;
+        }
+
+        ArrayList<Cord> moves = new ArrayList<Cord>();
+
+        for (Cord move : this.moves) {
+            for (int mag = 1; mag < 8; mag++) {
+                System.out.println(move.getX() * mag);
+            }
+
+        }
+
+        return new Cord[] { new Cord(0, 0) };
     }
 
 }
