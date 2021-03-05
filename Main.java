@@ -3,9 +3,9 @@ class Main {
         Board board = new Board();
         for (int y = 0; y < 8; y += 7) {
             Color color = y == 0 ? Color.BLACK : Color.WHITE;
-            for (int x = 0; x < Board.WIDTH; x++) {
-                board.set(x, y == 0 ? 1 : 6, new Pawn(color));
-            }
+            // for (int x = 0; x < Board.WIDTH; x++) {
+            //     board.set(x, y == 0 ? 1 : 6, new Pawn(color));
+            // }
             board.set(3, y, new Queen(color));
             board.set(4, y, new King(color));
 
@@ -19,8 +19,7 @@ class Main {
             board.set(2, y, new Bishop(color));
         }
 
-        Cord[] moveCords = board.get(3,0).allMovesRelCords();
-        Cord.relCordsToAbCords(moveCords, new Cord(3, 0));
+        Cord[] moveCords = board.get(3,0).allMoveCords(board, new Cord(3, 0));
         for(Cord cord : moveCords) {
             System.out.println(cord);
         }

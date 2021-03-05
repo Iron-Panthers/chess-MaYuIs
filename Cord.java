@@ -70,11 +70,11 @@ public class Cord {
         this.setY(abs.getY() + this.getY());
     }
 
-    public static void relCordsToAbCords(Cord[] rel, Cord source) {
-        for(Cord cord : rel){
-            cord.makeAbs(source);
-        }
-    }
+    // public static void relCordsToAbCords(Cord[] rel, Cord source) {
+    //     for(Cord cord : rel){
+    //         cord.makeAbs(source);
+    //     }
+    // }
 
     public String toString(){
         return "x: "+x+" y: "+y;

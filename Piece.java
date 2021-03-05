@@ -4,7 +4,6 @@ public class Piece {
     private Color color;
     private String name;
     private String icon;
-    private Cord cord;
     private boolean hasMoved;
     // moves and takes are relitive to white
     // they will be inverted for black pieces
@@ -39,7 +38,7 @@ public class Piece {
         return name.substring(0, 1).toUpperCase();
     }
 
-    public Cord[] allMovesRelCords() {
+    public Cord[] allMoveCords(Board board, Cord abs) {
         if (!this.ray) {
             return this.moves;
         }
@@ -48,7 +47,20 @@ public class Piece {
 
         for (Cord move : this.moves) {
             for (int mag = 1; mag < 8; mag++) {
-                moves.add(new Cord(move.getX() * mag, move.getY() * mag));
+                Cord cord = new Cord(move.getX() * mag, move.getY() * mag);
+
+                cord.makeAbs(abs);
+
+                if (!Board.validate(cord)) {
+                    break;
+                }
+
+                if (board.get(cord) != null) {
+                    // the ray hit a piece
+                    break;
+                }
+
+                moves.add(cord);
             }
 
         }
