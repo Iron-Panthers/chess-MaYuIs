@@ -48,12 +48,18 @@ public class Piece {
 
         for (Cord move : this.moves) {
             for (int mag = 1; mag < 8; mag++) {
-                System.out.println(move.getX() * mag);
+                moves.add(new Cord(move.getX() * mag, move.getY() * mag));
             }
 
         }
 
-        return new Cord[] { new Cord(0, 0) };
+        Cord[] retMoves = new Cord[moves.size()];
+
+        for (int i = 0; i < moves.size(); i++) {
+            retMoves[i] = moves.get(i);
+        }
+
+        return retMoves;
     }
 
 }
