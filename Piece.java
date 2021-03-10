@@ -38,10 +38,10 @@ public class Piece {
         return name.substring(0, 1).toUpperCase();
     }
 
-    public Cord[] allMoveCords(Board board, Cord abs) {
+    public Cord[] allMoveCords(Board board, Cord abs, boolean take) {
         ArrayList<Cord> moves = new ArrayList<Cord>();
 
-        for (Cord move : this.moves) {
+        for (Cord move : (take ? this.takes : this.moves)) {
             for (int mag = 1; mag < (this.ray ? 8 : 2); mag++) {
                 Cord cord = new Cord(move.getX() * mag, move.getY() * mag);
 
@@ -50,10 +50,15 @@ public class Piece {
                 if (!Board.validate(cord)) {
                     break;
                 }
-
-                if (board.get(cord) != null) {
-                    // the ray hit a piece
-                    break;
+                if (take) {
+                    if (board.get(cord) == null || board.get(cord).color == Color.BLACK) {
+                        continue;
+                    }
+                } else {
+                    if (board.get(cord) != null) {
+                        // the ray hit a piece
+                        break;
+                    }
                 }
 
                 moves.add(cord);
