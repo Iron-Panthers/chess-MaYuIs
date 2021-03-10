@@ -26,8 +26,20 @@ public class Board {
         return data[getI(x, y)];
     }
 
+    public Piece get(Cord cord) {
+        return this.get(cord.getX(), cord.getY());
+    }
+
     public void set(int x, int y, Piece piece) {
         data[getI(x, y)] = piece;
+    }
+
+    public static boolean validate(int x, int y) {
+        return (x >= 0 && x < WIDTH) && (y >= 0 && y < HEIGHT);
+    }
+
+    public static boolean validate(Cord cord) {
+        return validate(cord.getX(), cord.getY());
     }
 
     public String toString() {
