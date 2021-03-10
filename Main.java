@@ -1,5 +1,9 @@
+import java.util.*;
+
+
 class Main {
     public static void main(String[] args) {
+        Scanner imp = new Scanner(System.in);
         Board board = new Board();
         for (int y = 0; y < 8; y += 7) {
             Color color = y == 0 ? Color.BLACK : Color.WHITE;
@@ -19,6 +23,19 @@ class Main {
             board.set(2, y, new Bishop(color));
         }
 
-        System.out.print(board);
+        boolean gameOver = false;
+        Color turn = Color.WHITE;
+        while(!gameOver){
+            System.out.println(board);
+            System.out.print("It is "+turn+"'s turn. Enter cord of piece to move: ");
+
+            String move = imp.nextLine();
+
+            System.out.print("your move is "+move+" but we are out of time!");
+
+            gameOver = true;
+            //turn = turn == Color.BLACK ? Color.WHITE : Color.BLACK;
+            
+        }
     }
 }
