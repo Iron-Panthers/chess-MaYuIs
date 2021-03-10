@@ -39,14 +39,10 @@ public class Piece {
     }
 
     public Cord[] allMoveCords(Board board, Cord abs) {
-        if (!this.ray) {
-            return this.moves;
-        }
-
         ArrayList<Cord> moves = new ArrayList<Cord>();
 
         for (Cord move : this.moves) {
-            for (int mag = 1; mag < 8; mag++) {
+            for (int mag = 1; mag < (this.ray ? 8 : 2); mag++) {
                 Cord cord = new Cord(move.getX() * mag, move.getY() * mag);
 
                 cord.makeAbs(abs);

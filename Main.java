@@ -19,8 +19,8 @@ class Main {
             board.set(2, y, new Bishop(color));
         }
 
-        Cord[] moveCords = board.get(3,0).allMoveCords(board, new Cord(3, 0));
-        for(Cord cord : moveCords) {
+        Cord[] moveCords = board.get(4, 0).allMoveCords(board, new Cord(4, 0));
+        for (Cord cord : moveCords) {
             System.out.println(cord);
         }
 
